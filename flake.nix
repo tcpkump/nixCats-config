@@ -117,14 +117,17 @@
           lspsAndRuntimeDeps = {
             general = with pkgs; [
               lua-language-server
-	      nixd
+              nixd
             ];
           };
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
-            general = with pkgs.vimPlugins; [ ];
+            general = with pkgs.vimPlugins; [
+              lze
+              blink-cmp
+            ];
           };
 
           # not loaded automatically at startup.
