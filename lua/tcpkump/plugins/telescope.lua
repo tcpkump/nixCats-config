@@ -47,6 +47,10 @@ return {
       { "<leader>fg", "<Cmd>LiveGrepGitRoot<CR>", mode = {"n"}, desc = "Grep in Git Root" },
       { "<leader>gr", "<Cmd>Telescope lsp_references<CR>", mode = {"n"}, desc = "Find References" },
       { "<leader>km", "<Cmd>Telescope keymaps<CR>", mode = {"n"}, desc = "Search Keymaps" },
+      -- git-related
+      { "<leader>gm", "<Cmd>Telescope git_status<CR>", mode = {"n"}, desc = "Search Modified Files" },
+      { "<leader>gcb", "<Cmd>Telescope git_bcommits<CR>", mode = {"n"}, desc = "Search Buffer Commits" },
+      { "<leader>gcc", "<Cmd>Telescope git_commits<CR>", mode = {"n"}, desc = "Search All Commits" },
     },
     load = function (name)
         vim.cmd.packadd(name)

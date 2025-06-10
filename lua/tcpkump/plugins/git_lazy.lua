@@ -12,8 +12,11 @@ return {
     keys = {
         { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     },
-    load = function (name)
-        vim.cmd.packadd(name)
+  },
+  {
+    "gitlinker.nvim",
+    after = function (plugin)
+      require('gitlinker').setup {}
     end,
   },
 }

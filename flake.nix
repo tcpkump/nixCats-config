@@ -147,6 +147,7 @@
           optionalPlugins = {
             gitPlugins = with pkgs.vimPlugins; [
               lazygit-nvim
+              gitlinker-nvim
             ];
             general = with pkgs.vimPlugins; [ ];
             telescope = with pkgs.vimPlugins; [
