@@ -123,7 +123,9 @@
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
-            gitPlugins = with pkgs.neovimPlugins; [ ];
+            gitPlugins = with pkgs.vimPlugins; [
+              gitsigns-nvim
+            ];
             general = with pkgs.vimPlugins; [
               lze
               blink-cmp
