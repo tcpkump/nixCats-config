@@ -131,9 +131,10 @@
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
-              plenary-nvim
-              nvim-web-devicons
               nui-nvim
+              nvim-web-devicons
+              nvim-window-picker
+              plenary-nvim
             ];
           };
 
