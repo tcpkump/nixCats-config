@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- General
 vim.opt.updatetime = 100 -- Faster update time for plugins like git-signs
@@ -35,6 +35,7 @@ vim.opt.guicursor = {
   "i:blinkoff750-blinkon750-Cursor/lCursor", -- insert mode: blinking settings
 }
 
+require('keymaps')
 require('completion')
 require('lsp_config')
 require('neotree')
