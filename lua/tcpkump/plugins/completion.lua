@@ -1,3 +1,5 @@
+require('nvim-autopairs').setup()
+
 require('blink.cmp').setup({
   -- Keymap configuration
   keymap = {
