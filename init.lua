@@ -4,3 +4,4 @@ vim.g.maplocalleader = " "
 require('completion')
 require('lsp_config')
 require('neotree')
+require('smart_splits')

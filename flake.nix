@@ -127,6 +127,7 @@
             general = with pkgs.vimPlugins; [
               lze
               blink-cmp
+              smart-splits-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
