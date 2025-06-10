@@ -131,6 +131,10 @@
               blink-cmp
               smart-splits-nvim
             ];
+            telescope = with pkgs.vimPlugins; [
+              telescope-nvim
+              plenary-nvim
+            ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
               nui-nvim
@@ -217,6 +221,7 @@
               gitPlugins = true;
               customPlugins = true;
               test = true;
+              telescope = true;
               neoTree = true;
               example = {
                 youCan = "add more than just booleans";

@@ -1,0 +1,5 @@
+require('tcpkump.plugins.completion')
+require('tcpkump.plugins.neotree')
+require('tcpkump.plugins.smart_splits')
+require('tcpkump.plugins.telescope')
+require('tcpkump.plugins.git')
