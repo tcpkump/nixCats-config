@@ -128,6 +128,12 @@
               lze
               blink-cmp
             ];
+            neoTree = with pkgs.vimPlugins; [
+              neo-tree-nvim
+              plenary-nvim
+              nvim-web-devicons
+              nui-nvim
+            ];
           };
 
           # not loaded automatically at startup.
@@ -207,6 +213,7 @@
               gitPlugins = true;
               customPlugins = true;
               test = true;
+              neoTree = true;
               example = {
                 youCan = "add more than just booleans";
                 toThisSet = [
