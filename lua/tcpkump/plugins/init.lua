@@ -1,12 +1,13 @@
-require('tcpkump.plugins.completion')
-require('tcpkump.plugins.neotree')
-require('tcpkump.plugins.smart_splits')
-require('tcpkump.plugins.git')
-require('tcpkump.plugins.statusline')
-require('tcpkump.plugins.mini')
+require("tcpkump.plugins.completion")
+require("tcpkump.plugins.neotree")
+require("tcpkump.plugins.smart_splits")
+require("tcpkump.plugins.git")
+require("tcpkump.plugins.statusline")
+require("tcpkump.plugins.mini")
+require("tcpkump.plugins.format")
 
-require('lze').load {
-  { import  = 'tcpkump.plugins.telescope' },
-  { import  = 'tcpkump.plugins.git_lazy' },
-  { import  = 'tcpkump.plugins.search' },
-}
+require("lze").load({
+	{ import = "tcpkump.plugins.telescope" },
+	{ import = "tcpkump.plugins.git_lazy" },
+	{ import = "tcpkump.plugins.search" },
+})

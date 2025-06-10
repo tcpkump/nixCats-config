@@ -118,8 +118,16 @@
             general = with pkgs; [
               lazygit
 
+              # LSPs
               lua-language-server
               nixd
+
+              # Formatters
+              stylua
+              gotools
+              hclfmt
+              nixfmt-rfc-style
+              prettierd
             ];
           };
 
@@ -132,6 +140,7 @@
               kanagawa-nvim
               lze
               blink-cmp
+              conform-nvim
               smart-splits-nvim
               nvim-autopairs
               lualine-nvim
