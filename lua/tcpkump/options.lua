@@ -3,6 +3,8 @@ vim.g.maplocalleader = ","
 
 vim.cmd("colorscheme kanagawa")
 
+vim.diagnostic.config({ virtual_text = true })
+
 -- General
 vim.opt.updatetime = 100 -- Faster update time for plugins like git-signs
 vim.opt.spell = false -- Disable spellcheck
