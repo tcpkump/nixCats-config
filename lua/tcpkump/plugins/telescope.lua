@@ -1,25 +1,3 @@
--- Telescope is a fuzzy finder that comes with a lot of different things that
--- it can fuzzy find! It's more than just a "file finder", it can search
--- many different aspects of Neovim, your workspace, LSP, and more!
---
--- The easiest way to use telescope, is to start by doing something like:
---  :Telescope help_tags
---
--- After running this command, a window will open up and you're able to
--- type in the prompt window. You'll see a list of help_tags options and
--- a corresponding preview of the help.
---
--- Two important keymaps to use while in telescope are:
---  - Insert mode: <c-/>
---  - Normal mode: ?
---
--- This opens a window that shows you all of the keymaps for the current
--- telescope picker. This is really useful to discover what Telescope can
--- do as well as how to actually do it!
-
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
-
 -- Telescope live_grep in git root
 -- Function to find the git root directory based on the current buffer's path
 local function find_git_root()
@@ -57,11 +35,25 @@ end
 return {
   {
     "telescope.nvim",
-    for_cat = 'general.telescope',
     cmd = { "Telescope", "LiveGrepGitRoot" },
     -- NOTE: our on attach function defines keybinds that call telescope.
     -- so, the on_require handler will load telescope when we use those.
     on_require = { "telescope", },
+    keys = {
+      { "<leader>:", "<Cmd>Telescope command_history<CR>", mode = {"n"}, desc = "Search Command History" },
+      { "<leader>ff", "<Cmd>Telescope find_files<CR>", mode = {"n"}, desc = "Find File" },
+      { "<leader>fo", "<Cmd>Telescope oldfiles<CR>", mode = {"n"}, desc = "Find Recent File" },
+      { "<leader>fw", "<Cmd>Telescope live_grep_args<CR>", mode = {"n"}, desc = "Grep in Files" },
+      { "<leader>fg", "<Cmd>LiveGrepGitRoot<CR>", mode = {"n"}, desc = "Grep in Git Root" },
+      { "<leader>gr", "<Cmd>Telescope lsp_references<CR>", mode = {"n"}, desc = "Find References" },
+      { "<leader>km", "<Cmd>Telescope keymaps<CR>", mode = {"n"}, desc = "Search Keymaps" },
+    },
+    load = function (name)
+        vim.cmd.packadd(name)
+        vim.cmd.packadd("telescope-fzf-native.nvim")
+        vim.cmd.packadd("telescope-ui-select.nvim")
+        vim.cmd.packadd("telescope-live-grep-args.nvim")
+    end,
     after = function (plugin)
       require('telescope').setup {
         -- pickers = {}
@@ -73,10 +65,9 @@ return {
       }
 
       -- Enable telescope extensions, if they are installed
-      -- pcall(require('telescope').load_extension, 'fzf')
-      -- pcall(require('telescope').load_extension, 'ui-select')
-
-      vim.keymap.set("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Find File" })
+      pcall(require('telescope').load_extension, 'fzf')
+      pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension, 'live_grep_args')
 
       vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
     end,

@@ -131,10 +131,6 @@
               blink-cmp
               smart-splits-nvim
             ];
-            telescope = with pkgs.vimPlugins; [
-              telescope-nvim
-              plenary-nvim
-            ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
               nui-nvim
@@ -149,6 +145,12 @@
           optionalPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
             general = with pkgs.vimPlugins; [ ];
+            telescope = with pkgs.vimPlugins; [
+              telescope-fzf-native-nvim
+              telescope-ui-select-nvim
+              telescope-nvim
+              telescope-live-grep-args-nvim
+            ];
           };
 
           # shared libraries to be added to LD_LIBRARY_PATH
