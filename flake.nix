@@ -135,6 +135,10 @@
               smart-splits-nvim
               nvim-autopairs
               lualine-nvim
+              vim-sleuth
+              mini-ai
+              mini-comment
+              mini-surround
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
