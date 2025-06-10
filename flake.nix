@@ -128,6 +128,11 @@
               hclfmt
               nixfmt-rfc-style
               prettierd
+              puppet-lint
+
+              # diagnostics
+              # puppet-lint # also a formatter
+              trivy
             ];
           };
 
@@ -148,6 +153,7 @@
               mini-ai
               mini-comment
               mini-surround
+              none-ls-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
