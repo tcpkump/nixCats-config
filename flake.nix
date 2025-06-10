@@ -156,7 +156,9 @@
               lazygit-nvim
               gitlinker-nvim
             ];
-            general = with pkgs.vimPlugins; [ ];
+            general = with pkgs.vimPlugins; [
+              grug-far-nvim
+            ];
             telescope = with pkgs.vimPlugins; [
               telescope-fzf-native-nvim
               telescope-ui-select-nvim
