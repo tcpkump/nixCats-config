@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+vim.cmd("colorscheme kanagawa")
+
 -- General
 vim.opt.updatetime = 100 -- Faster update time for plugins like git-signs
 vim.opt.spell = false -- Disable spellcheck

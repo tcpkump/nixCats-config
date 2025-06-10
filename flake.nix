@@ -129,6 +129,7 @@
               gitsigns-nvim
             ];
             general = with pkgs.vimPlugins; [
+              kanagawa-nvim
               lze
               blink-cmp
               smart-splits-nvim
