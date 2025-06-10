@@ -134,6 +134,7 @@
               blink-cmp
               smart-splits-nvim
               nvim-autopairs
+              lualine-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
