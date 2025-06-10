@@ -116,6 +116,8 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             general = with pkgs; [
+              lazygit
+
               lua-language-server
               nixd
             ];
@@ -143,7 +145,9 @@
           # not loaded automatically at startup.
           # use with packadd and an autocommand in config to achieve lazy loading
           optionalPlugins = {
-            gitPlugins = with pkgs.neovimPlugins; [ ];
+            gitPlugins = with pkgs.vimPlugins; [
+              lazygit-nvim
+            ];
             general = with pkgs.vimPlugins; [ ];
             telescope = with pkgs.vimPlugins; [
               telescope-fzf-native-nvim
