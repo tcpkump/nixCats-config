@@ -158,6 +158,7 @@
               none-ls-nvim
               vim-helm
               indent-blankline-nvim
+              nvim-treesitter.withAllGrammars
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
