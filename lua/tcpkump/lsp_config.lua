@@ -8,13 +8,13 @@ vim.lsp.enable({
 	"bash",
 	"c",
 	"docker",
+	"go",
 	"helm",
 	"lua",
 	"nix",
 	"yaml",
 
 	-- TODO
-	-- gopls
 	-- jsonls
 	-- perlnavigator
 	-- phpactor

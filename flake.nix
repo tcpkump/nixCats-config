@@ -45,6 +45,7 @@
               bash-language-server
               clang-tools
               docker-language-server
+              gopls
               helm-ls
               lua-language-server
               nixd
