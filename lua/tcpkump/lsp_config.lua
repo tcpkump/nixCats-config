@@ -12,6 +12,7 @@ vim.lsp.enable({
 	"helm",
 	"lua",
 	"nix",
+	"python", -- TODO do I still want ruff? formatting and/or linting?
 	"terraform",
 	"yaml",
 
@@ -24,9 +25,6 @@ vim.lsp.enable({
 	-- sqls
 	-- ts_ls
 	-- zls
-	-- python
-	--   basedpyright
-	--   ruff
 
 	-- TODO lsp keymaps
 })
