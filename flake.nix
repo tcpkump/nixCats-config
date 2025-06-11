@@ -157,6 +157,7 @@
               mini-surround
               none-ls-nvim
               vim-helm
+              indent-blankline-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim

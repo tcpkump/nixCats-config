@@ -6,6 +6,7 @@ require("tcpkump.plugins.statusline")
 require("tcpkump.plugins.mini")
 require("tcpkump.plugins.format")
 require("tcpkump.plugins.linting_diagnostics")
+require("tcpkump.plugins.indent_blankline")
 
 require("lze").load({
 	{ import = "tcpkump.plugins.telescope" },
