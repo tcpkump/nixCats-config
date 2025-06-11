@@ -39,10 +39,15 @@
           lspsAndRuntimeDeps = {
             general = with pkgs; [
               lazygit
+
+              # LSPs
               lua-language-server
               nixd
               yaml-language-server
               helm-ls
+              ansible-language-server
+
+              # Diagnostics
               stylua
               gotools
               hclfmt

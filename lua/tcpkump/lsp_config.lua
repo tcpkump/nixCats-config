@@ -3,6 +3,7 @@ vim.lsp.config("*", {
 })
 
 vim.lsp.enable({
+	"ansiblels",
 	"helmls",
 	"luals",
 	"nixd",
