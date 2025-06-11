@@ -6,6 +6,7 @@ vim.lsp.config("*", {
 vim.lsp.enable({
 	"ansible",
 	"bash",
+	"c",
 	"helm",
 	"lua",
 	"nix",

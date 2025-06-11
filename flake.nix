@@ -43,6 +43,7 @@
               # LSPs
               ansible-language-server
               bash-language-server
+              clang-tools
               helm-ls
               lua-language-server
               nixd
