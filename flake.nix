@@ -49,6 +49,7 @@
               helm-ls
               lua-language-server
               nixd
+              terraform-ls
               yaml-language-server
 
               # Diagnostics

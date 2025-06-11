@@ -12,6 +12,7 @@ vim.lsp.enable({
 	"helm",
 	"lua",
 	"nix",
+	"terraform",
 	"yaml",
 
 	-- TODO
@@ -21,7 +22,6 @@ vim.lsp.enable({
 	-- ruby_lsp
 	-- rust_analyzer
 	-- sqls
-	-- terraformls
 	-- ts_ls
 	-- zls
 	-- python
