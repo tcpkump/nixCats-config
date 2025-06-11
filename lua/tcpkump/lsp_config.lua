@@ -12,4 +12,21 @@ vim.lsp.enable({
 	"lua",
 	"nix",
 	"yaml",
+
+	-- TODO
+	-- gopls
+	-- jsonls
+	-- perlnavigator
+	-- phpactor
+	-- ruby_lsp
+	-- rust_analyzer
+	-- sqls
+	-- terraformls
+	-- ts_ls
+	-- zls
+	-- python
+	--   basedpyright
+	--   ruff
+
+	-- TODO lsp keymaps
 })
