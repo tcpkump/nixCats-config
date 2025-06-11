@@ -41,11 +41,12 @@
               lazygit
 
               # LSPs
+              ansible-language-server
+              bash-language-server
+              helm-ls
               lua-language-server
               nixd
               yaml-language-server
-              helm-ls
-              ansible-language-server
 
               # Diagnostics
               stylua
