@@ -121,6 +121,8 @@
               # LSPs
               lua-language-server
               nixd
+              yaml-language-server
+              helm-ls
 
               # Formatters
               stylua
@@ -154,6 +156,7 @@
               mini-comment
               mini-surround
               none-ls-nvim
+              vim-helm
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim

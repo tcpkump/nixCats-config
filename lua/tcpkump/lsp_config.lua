@@ -3,6 +3,8 @@ vim.lsp.config("*", {
 })
 
 vim.lsp.enable({
+	"helmls",
 	"luals",
 	"nixd",
+	"yamlls",
 })
