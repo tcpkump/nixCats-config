@@ -44,6 +44,7 @@
               ansible-language-server
               bash-language-server
               clang-tools
+              docker-language-server
               helm-ls
               lua-language-server
               nixd

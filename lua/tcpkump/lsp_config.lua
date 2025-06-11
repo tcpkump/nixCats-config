@@ -7,6 +7,7 @@ vim.lsp.enable({
 	"ansible",
 	"bash",
 	"c",
+	"docker",
 	"helm",
 	"lua",
 	"nix",
