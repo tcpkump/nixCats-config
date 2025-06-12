@@ -47,14 +47,16 @@
               terraform-ls
               yaml-language-server
 
-              # Diagnostics
-              stylua
-              gotools
-              hclfmt
-              nixfmt-rfc-style
-              prettierd
-              puppet-lint
-              trivy
+              # Diagnostics/Formatters
+              black # python
+              stylua # lua
+              gotools # go
+              hclfmt # hcl/packer/terraform
+              isort # python
+              nixfmt-rfc-style # nix
+              prettierd # generic
+              puppet-lint # puppet
+              trivy # terraform
             ];
           };
 
