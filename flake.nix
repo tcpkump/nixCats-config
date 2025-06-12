@@ -8,7 +8,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       nixCats,
       ...
@@ -27,13 +26,8 @@
       categoryDefinitions =
         {
           pkgs,
-          settings,
-          categories,
-          extra,
-          name,
-          mkNvimPlugin,
           ...
-        }@packageDef:
+        }:
         {
           # Dependencies available at runtime (LSPs, formatters, etc.)
           lspsAndRuntimeDeps = {
@@ -116,15 +110,15 @@
           };
 
           # Shared libraries added to LD_LIBRARY_PATH
-          sharedLibraries = {
-            general = with pkgs; [ ];
-          };
+          # sharedLibraries = {
+          #   general = with pkgs; [ ];
+          # };
 
         };
 
       packageDefinitions = {
         nvim =
-          { pkgs, ... }:
+          { ... }:
           {
             settings = {
               wrapRc = true;
