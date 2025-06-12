@@ -48,6 +48,7 @@
               yaml-language-server
 
               # Diagnostics/Formatters
+              ansible-lint # ansible
               black # python
               stylua # lua
               gotools # go
