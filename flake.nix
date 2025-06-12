@@ -82,6 +82,7 @@
               vim-helm
               indent-blankline-nvim
               nvim-treesitter.withAllGrammars
+              nvim-treesitter-context
               alpha-nvim
               tiny-inline-diagnostic-nvim
             ];
