@@ -86,6 +86,7 @@
               indent-blankline-nvim
               nvim-treesitter.withAllGrammars
               alpha-nvim
+              tiny-inline-diagnostic-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim

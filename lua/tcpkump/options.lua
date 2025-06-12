@@ -3,8 +3,6 @@ vim.g.maplocalleader = ","
 
 vim.cmd("colorscheme kanagawa")
 
-vim.diagnostic.config({ virtual_text = true })
-
 -- General
 vim.opt.updatetime = 100 -- Faster update time for plugins like git-signs
 vim.opt.spell = false -- Disable spellcheck
@@ -38,3 +36,4 @@ vim.opt.guicursor = {
 	"r-cr-o:hor20",
 	"i:blinkoff750-blinkon750-Cursor/lCursor", -- insert mode: blinking settings
 }
+vim.opt.cursorline = true
