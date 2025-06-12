@@ -32,6 +32,33 @@ local function live_grep_git_root()
 	end
 end
 
+-- A helper function to get the root directory of the LSP for the current buffer.
+-- It falls back to the current working directory if no LSP is found.
+local function find_lsp_root()
+	local bufnr = vim.api.nvim_get_current_buf()
+	-- Get all active clients for the current buffer
+	local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+
+	-- If there are clients, return the root_dir of the first one.
+	-- You might have multiple (e.g., terraform-ls and null-ls), but the first is usually fine.
+	if #clients > 0 and clients[1].root_dir then
+		return clients[1].root_dir
+	end
+
+	-- Fallback to the current working directory
+	return vim.fn.getcwd()
+end
+
+-- Custom live_grep function to search in lsp root
+local function live_grep_lsp_root()
+	local lsp_root = find_lsp_root()
+	if lsp_root then
+		require("telescope.builtin").live_grep({
+			search_dirs = { lsp_root },
+		})
+	end
+end
+
 return {
 	{
 		"telescope.nvim",
@@ -45,6 +72,7 @@ return {
 			{ "<leader>fo", "<Cmd>Telescope oldfiles<CR>", mode = { "n" }, desc = "Find Recent File" },
 			{ "<leader>fw", "<Cmd>Telescope live_grep_args<CR>", mode = { "n" }, desc = "Grep in Files" },
 			{ "<leader>fg", "<Cmd>LiveGrepGitRoot<CR>", mode = { "n" }, desc = "Grep in Git Root" },
+			{ "<leader>fl", "<Cmd>LiveGrepLspRoot<CR>", mode = { "n" }, desc = "Grep in LSP Root" },
 			{ "<leader>km", "<Cmd>Telescope keymaps<CR>", mode = { "n" }, desc = "Search Keymaps" },
 			-- git-related
 			{ "<leader>gm", "<Cmd>Telescope git_status<CR>", mode = { "n" }, desc = "Search Modified Files" },
@@ -75,6 +103,7 @@ return {
 			pcall(require("telescope").load_extension, "live_grep_args")
 
 			vim.api.nvim_create_user_command("LiveGrepGitRoot", live_grep_git_root, {})
+			vim.api.nvim_create_user_command("LiveGrepLspRoot", live_grep_lsp_root, {})
 		end,
 	},
 }
