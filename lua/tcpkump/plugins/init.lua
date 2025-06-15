@@ -8,11 +8,11 @@ require("tcpkump.plugins.format")
 require("tcpkump.plugins.diagnostic")
 require("tcpkump.plugins.linting_diagnostics")
 require("tcpkump.plugins.indent_blankline")
+require("tcpkump.plugins.snacks")
 require("tcpkump.plugins.treesitter")
 require("tcpkump.plugins.welcome")
 
 require("lze").load({
-	{ import = "tcpkump.plugins.telescope" },
 	{ import = "tcpkump.plugins.git_lazy" },
 	{ import = "tcpkump.plugins.search" },
 	{ import = "tcpkump.plugins.switch" },

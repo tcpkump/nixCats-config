@@ -94,6 +94,9 @@
               nvim-window-picker
               plenary-nvim
             ];
+            snacks = with pkgs.vimPlugins; [
+              snacks-nvim
+            ];
           };
 
           # not loaded automatically at startup.
@@ -106,12 +109,6 @@
             general = with pkgs.vimPlugins; [
               grug-far-nvim
               switch-vim
-            ];
-            telescope = with pkgs.vimPlugins; [
-              telescope-fzf-native-nvim
-              telescope-ui-select-nvim
-              telescope-nvim
-              telescope-live-grep-args-nvim
             ];
           };
 
@@ -134,7 +131,7 @@
               general = true;
               gitPlugins = true;
               customPlugins = true;
-              telescope = true;
+              snacks = true;
               neoTree = true;
             };
           };
