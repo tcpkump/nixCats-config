@@ -1,6 +1,17 @@
 require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 	indent = { enable = false },
+	textobjects = {
+		swap = {
+			enable = true,
+			swap_next = {
+				["<leader>sa"] = "@parameter.inner",
+			},
+			swap_previous = {
+				["<leader>sA"] = "@parameter.inner",
+			},
+		},
+	},
 })
 
 require("treesitter-context").setup({
