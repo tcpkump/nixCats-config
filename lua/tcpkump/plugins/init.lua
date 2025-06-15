@@ -15,4 +15,5 @@ require("lze").load({
 	{ import = "tcpkump.plugins.telescope" },
 	{ import = "tcpkump.plugins.git_lazy" },
 	{ import = "tcpkump.plugins.search" },
+	{ import = "tcpkump.plugins.switch" },
 })

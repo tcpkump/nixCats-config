@@ -104,6 +104,7 @@
             ];
             general = with pkgs.vimPlugins; [
               grug-far-nvim
+              switch-vim
             ];
             telescope = with pkgs.vimPlugins; [
               telescope-fzf-native-nvim
