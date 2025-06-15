@@ -103,7 +103,6 @@
           # use with packadd and an autocommand in config to achieve lazy loading
           optionalPlugins = {
             gitPlugins = with pkgs.vimPlugins; [
-              lazygit-nvim
               gitlinker-nvim
             ];
             general = with pkgs.vimPlugins; [

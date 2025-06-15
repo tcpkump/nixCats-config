@@ -1,4 +1,7 @@
-require("snacks").setup({})
+require("snacks").setup({
+	picker = { enabled = true },
+	lazygit = { enabled = true },
+})
 
 -- A helper function to get the root directory of the LSP for the current buffer.
 -- It falls back to the current working directory if no LSP is found.
@@ -16,6 +19,10 @@ local function find_lsp_root()
 	-- Fallback to the current working directory
 	return vim.fn.getcwd()
 end
+
+vim.keymap.set("n", "<leader>gg", function()
+	require("snacks").lazygit()
+end, { desc = "Lazygit" })
 
 -- Custom live_grep function to search in lsp root
 local function live_grep_lsp_root()
