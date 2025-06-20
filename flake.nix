@@ -87,6 +87,7 @@
               alpha-nvim
               tiny-inline-diagnostic-nvim
               SchemaStore-nvim
+              yaml-schema-detect-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
