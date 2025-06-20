@@ -86,6 +86,7 @@
               nvim-treesitter-textobjects
               alpha-nvim
               tiny-inline-diagnostic-nvim
+              SchemaStore-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
