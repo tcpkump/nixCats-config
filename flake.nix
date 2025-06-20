@@ -41,11 +41,9 @@
               clang-tools
               docker-language-server
               gopls
-              helm-ls
               lua-language-server
               nixd
               terraform-ls
-              yaml-language-server
 
               # Diagnostics/Formatters
               ansible-lint # ansible
@@ -58,6 +56,10 @@
               prettierd # generic
               puppet-lint # puppet
               trivy # terraform
+            ];
+            yaml = with pkgs; [
+              helm-ls
+              yaml-language-server
             ];
           };
 
@@ -79,15 +81,12 @@
               mini-comment
               mini-surround
               none-ls-nvim
-              vim-helm
               indent-blankline-nvim
               nvim-treesitter.withAllGrammars
               nvim-treesitter-context
               nvim-treesitter-textobjects
               alpha-nvim
               tiny-inline-diagnostic-nvim
-              SchemaStore-nvim
-              yaml-schema-detect-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
@@ -98,6 +97,11 @@
             ];
             snacks = with pkgs.vimPlugins; [
               snacks-nvim
+            ];
+            yaml = with pkgs.vimPlugins; [
+              schema-companion-nvim
+              SchemaStore-nvim
+              vim-helm
             ];
           };
 
@@ -134,6 +138,7 @@
               customPlugins = true;
               snacks = true;
               neoTree = true;
+              yaml = true;
             };
           };
       };
