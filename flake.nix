@@ -99,8 +99,6 @@
               snacks-nvim
             ];
             yaml = with pkgs.vimPlugins; [
-              schema-companion-nvim
-              SchemaStore-nvim
               vim-helm
             ];
           };

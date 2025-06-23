@@ -10,7 +10,6 @@ require("tcpkump.plugins.linting_diagnostics")
 require("tcpkump.plugins.indent_blankline")
 require("tcpkump.plugins.snacks")
 require("tcpkump.plugins.treesitter")
-require("tcpkump.plugins.schema_companion")
 require("tcpkump.plugins.welcome")
 
 require("lze").load({
