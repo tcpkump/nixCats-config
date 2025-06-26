@@ -56,6 +56,7 @@
               prettierd # generic
               puppet-lint # puppet
               trivy # terraform
+              # yamllint # yaml -- disabled due to it triggering in helm templates
             ];
             yaml = with pkgs; [
               helm-ls
@@ -87,6 +88,7 @@
               nvim-treesitter-textobjects
               alpha-nvim
               tiny-inline-diagnostic-nvim
+              nvim-lspconfig
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim

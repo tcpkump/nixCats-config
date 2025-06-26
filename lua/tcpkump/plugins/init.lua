@@ -1,4 +1,5 @@
 require("tcpkump.plugins.completion")
+require("tcpkump.plugins.lsp")
 require("tcpkump.plugins.neotree")
 require("tcpkump.plugins.smart_splits")
 require("tcpkump.plugins.git")
