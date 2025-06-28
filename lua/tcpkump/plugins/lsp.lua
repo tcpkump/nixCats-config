@@ -27,40 +27,39 @@ vim.api.nvim_create_autocmd("LspAttach", {
 local yamlls_config = {
 	keyOrdering = false,
 	validate = true,
+	completion = true,
 	schemaStore = {
 		enable = false,
+		url = "", -- Explicitly disable schema store
 	},
 	schemas = {
-		["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-		["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+		["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+		["https://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
 		["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] = "roles/tasks/**/*.{yml,yaml}",
-		["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-		["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+		-- Kubernetes
+		["https://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+		["https://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+		["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.33.0/all.json"] = "*.k8s.{yml,yaml}",
+		["https://raw.githubusercontent.com/datreeio/CRDs-catalog/refs/heads/main/monitoring.coreos.com/prometheusrule_v1.json"] = "*PrometheusRule*.{yml,yaml}",
+		["https://raw.githubusercontent.com/datreeio/CRDs-catalog/refs/heads/main/monitoring.coreos.com/scrapeconfig_v1alpha1.json"] = "*ScrapeConfig*.{yml,yaml}",
+		["https://raw.githubusercontent.com/datreeio/CRDs-catalog/refs/heads/main/monitoring.coreos.com/servicemonitor_v1.json"] = "*ServiceMonitor*.{yml,yaml}",
+		["https://raw.githubusercontent.com/datreeio/CRDs-catalog/refs/heads/main/monitoring.coreos.com/probe_v1.json"] = "*Probe*.{yml,yaml}",
+		["https://raw.githubusercontent.com/datreeio/CRDs-catalog/refs/heads/main/monitoring.coreos.com/podmonitor_v1.json"] = "*PodMonitor*.{yml,yaml}",
+		["https://raw.githubusercontent.com/datreeio/CRDs-catalog/refs/heads/main/monitoring.coreos.com/alertmanagerconfig_v1alpha1.json"] = "*{AlertManagerConfig,InhibitRule}*.{yml,yaml}",
 	},
 }
 
--- LSP server configuration
 local servers = {
 	-- Language servers with default config
-	"ansiblels",
-	"bashls",
-	"clangd",
-	"gopls",
-	"nixd",
-	"terraformls",
+	ansiblels = {},
+	bashls = {},
+	clangd = {},
+	gopls = {},
+	nixd = {},
+	terraformls = {},
 
 	dockerls = {
 		cmd = { "docker-language-server", "start", "--stdio" },
-	},
-
-	helm_ls = {
-		settings = {
-			["helm-ls"] = {
-				yamlls = {
-					config = yamlls_config,
-				},
-			},
-		},
 	},
 
 	lua_ls = {
@@ -74,22 +73,48 @@ local servers = {
 		},
 	},
 
+	jsonls = {
+		settings = {
+			json = {
+				schemas = {
+					{
+						fileMatch = { "package.json" },
+						url = "https://json.schemastore.org/package.json",
+					},
+					{
+						fileMatch = { "tsconfig.json", "tsconfig.*.json" },
+						url = "https://json.schemastore.org/tsconfig.json",
+					},
+				},
+				validate = { enable = true },
+			},
+		},
+	},
+
 	yamlls = {
 		settings = {
 			redhat = { telemetry = { enabled = false } },
 			yaml = yamlls_config,
 		},
 	},
+
+	helm_ls = {
+		settings = {
+			["helm-ls"] = {
+				yamlls = {
+					config = yamlls_config,
+				},
+			},
+		},
+	},
 }
 
--- Enable servers
+-- Configure servers first
 for server, config in pairs(servers) do
-	if type(server) == "number" then
-		-- Simple server name in array part
-		vim.lsp.enable(config)
-	else
-		-- Server with custom config
-		vim.lsp.enable(server)
-		vim.lsp.config(server, config)
-	end
+	vim.lsp.config(server, config)
+end
+
+-- Then enable them
+for server, _ in pairs(servers) do
+	vim.lsp.enable(server)
 end
