@@ -33,6 +33,7 @@
           lspsAndRuntimeDeps = {
             general = with pkgs; [
               lazygit
+              ripgrep
 
               # LSPs
               ansible-language-server
@@ -73,6 +74,7 @@
               kanagawa-nvim
               lze
               blink-cmp
+              blink-ripgrep-nvim
               conform-nvim
               smart-splits-nvim
               nvim-autopairs
