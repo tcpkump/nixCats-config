@@ -1,6 +1,7 @@
 require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 	indent = { enable = false },
+	matchup = { enable = true },
 	textobjects = {
 		swap = {
 			enable = true,
