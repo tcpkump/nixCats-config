@@ -52,6 +52,7 @@ local yamlls_config = {
 local servers = {
 	-- Language servers with default config
 	ansiblels = {},
+	basedpyright = {},
 	bashls = {},
 	clangd = {},
 	gopls = {},
