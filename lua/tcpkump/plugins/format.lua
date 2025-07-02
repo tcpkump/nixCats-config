@@ -2,7 +2,7 @@ local conform = require("conform")
 conform.setup({
   format_on_save = {
     lsp_format = "fallback",
-    timeout_ms = 500,
+    timeout_ms = 2000,
   },
   formatters_by_ft = {
     -- NOTE: download formatters in lspsAndRuntimeDeps
@@ -23,11 +23,3 @@ conform.setup({
     -- javascript = { { "prettierd", "prettier" } },
   },
 })
-
-vim.keymap.set({ "n", "v" }, "<leader>cf", function()
-  conform.format({
-    lsp_fallback = true,
-    async = false,
-    timeout_ms = 1000,
-  })
-end, { desc = "Code Format" })
