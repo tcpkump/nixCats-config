@@ -14,7 +14,7 @@ require("tcpkump.plugins.treesitter")
 require("tcpkump.plugins.welcome")
 
 require("lze").load({
-	{ import = "tcpkump.plugins.git_lazy" },
-	{ import = "tcpkump.plugins.search" },
-	{ import = "tcpkump.plugins.switch" },
+  { import = "tcpkump.plugins.git_lazy" },
+  { import = "tcpkump.plugins.search" },
+  { import = "tcpkump.plugins.switch" },
 })

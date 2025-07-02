@@ -1,5 +1,5 @@
 require("smart-splits").setup({
-	at_edge = "stop",
+  at_edge = "stop",
 })
 
 -- recommended mappings

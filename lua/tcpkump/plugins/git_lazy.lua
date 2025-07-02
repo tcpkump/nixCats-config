@@ -1,8 +1,8 @@
 return {
-	{
-		"gitlinker.nvim",
-		after = function(plugin)
-			require("gitlinker").setup({})
-		end,
-	},
+  {
+    "gitlinker.nvim",
+    after = function(plugin)
+      require("gitlinker").setup({})
+    end,
+  },
 }
