@@ -16,6 +16,8 @@ conform.setup({
     ["terraform-vars"] = { "terraform_fmt" },
     zig = { "prettierd" },
     javascript = { "prettierd" },
+    json = { "prettierd" },
+    jsonc = { "prettierd" },
 
     -- Conform will run multiple formatters sequentially
     python = { "isort", "black" },

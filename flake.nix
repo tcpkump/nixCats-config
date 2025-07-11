@@ -45,6 +45,7 @@
               lua-language-server
               nixd
               terraform-ls
+              nodePackages.vscode-json-languageserver
 
               # Diagnostics/Formatters
               ansible-lint # ansible

@@ -84,6 +84,7 @@ local servers = {
   },
 
   jsonls = {
+    cmd = { "vscode-json-languageserver", "--stdio" },
     settings = {
       json = {
         schemas = {
@@ -94,6 +95,14 @@ local servers = {
           {
             fileMatch = { "tsconfig.json", "tsconfig.*.json" },
             url = "https://json.schemastore.org/tsconfig.json",
+          },
+          {
+            fileMatch = { ".prettierrc.json", ".prettierrc" },
+            url = "https://json.schemastore.org/prettierrc.json",
+          },
+          {
+            fileMatch = { "composer.json" },
+            url = "https://json.schemastore.org/composer.json",
           },
         },
         validate = { enable = true },
