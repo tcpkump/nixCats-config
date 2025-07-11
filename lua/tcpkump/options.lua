@@ -6,7 +6,7 @@ vim.cmd("colorscheme kanagawa")
 -- General
 vim.opt.updatetime = 100 -- Faster update time for plugins like git-signs
 vim.opt.spell = false -- Disable spellcheck
-vim.opt.conceallevel = 1 -- Hide some markdown syntax for better readability
+vim.opt.conceallevel = 0 -- See raw characters in files
 vim.opt.wrap = false -- Do not wrap lines
 vim.opt.swapfile = false -- Do not create a swapfile
 vim.opt.undofile = true -- Persist undo history
