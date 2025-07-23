@@ -12,3 +12,9 @@ map("n", "N", "Nzzzv", { desc = "Move to previous search result and center" })
 map('n', '<leader>cd', vim.diagnostic.open_float, { desc = "Code Diagnostic", noremap = true, silent = true })
 map('n', '[d', vim.diagnostic.goto_prev, { desc = "Prev Diagnostic", noremap = true, silent = true })
 map('n', ']d', vim.diagnostic.goto_next, { desc = "Next Diagnostic", noremap = true, silent = true })
+
+-- Run terraform init -upgrade in current buffer directory
+map('n', '<leader>tfi', function()
+  local buf_dir = vim.fn.expand('%:p:h')
+  vim.cmd('term cd ' .. vim.fn.shellescape(buf_dir) .. ' && terraform init -upgrade')
+end, { desc = "Run terraform init -upgrade in current buffer directory" })
