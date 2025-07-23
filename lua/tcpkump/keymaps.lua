@@ -18,3 +18,9 @@ map('n', '<leader>tfi', function()
   local buf_dir = vim.fn.expand('%:p:h')
   vim.cmd('term cd ' .. vim.fn.shellescape(buf_dir) .. ' && terraform init -upgrade')
 end, { desc = "Run terraform init -upgrade in current buffer directory" })
+
+-- Run terraform plan in current buffer directory
+map('n', '<leader>tfp', function()
+  local buf_dir = vim.fn.expand('%:p:h')
+  vim.cmd('term cd ' .. vim.fn.shellescape(buf_dir) .. ' && terraform plan')
+end, { desc = "Run terraform plan in current buffer directory" })
