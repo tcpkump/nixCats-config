@@ -10,6 +10,7 @@ require("tcpkump.plugins.neotree")
 require("tcpkump.plugins.smart_splits")
 require("tcpkump.plugins.snacks")
 require("tcpkump.plugins.statusline")
+require("tcpkump.plugins.todo_comments")
 require("tcpkump.plugins.treesitter")
 require("tcpkump.plugins.welcome")
 

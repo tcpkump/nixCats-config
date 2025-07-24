@@ -93,6 +93,7 @@
               tiny-inline-diagnostic-nvim
               nvim-lspconfig
               vim-matchup
+              todo-comments-nvim
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
