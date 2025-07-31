@@ -79,7 +79,7 @@
               conform-nvim
               smart-splits-nvim
               nvim-autopairs
-              lualine-nvim
+              mini-statusline
               vim-sleuth
               mini-ai
               mini-comment
