@@ -44,21 +44,21 @@
               gopls
               lua-language-server
               nixd
-              terraform-ls
               nodePackages.vscode-json-languageserver
+              terraform-ls
 
               # Diagnostics/Formatters
-              ansible-lint # ansible
+              ansible-lint
               black # python
-              stylua # lua
-              gotools # go
+              gotools
               hclfmt # hcl/packer/terraform
               isort # python
-              nixfmt-rfc-style # nix
+              nixfmt-rfc-style
               prettierd # generic
-              puppet-lint # puppet
+              puppet-lint
+              stylua
               trivy # terraform
-              # yamllint # yaml -- disabled due to it triggering in helm templates
+              # yamllint # disabled due to it triggering in helm templates
             ];
             yaml = with pkgs; [
               helm-ls
@@ -72,28 +72,28 @@
               gitsigns-nvim
             ];
             general = with pkgs.vimPlugins; [
-              kanagawa-nvim
-              lze
+              alpha-nvim
               blink-cmp
               blink-ripgrep-nvim
               conform-nvim
-              smart-splits-nvim
-              nvim-autopairs
-              mini-statusline
-              vim-sleuth
+              indent-blankline-nvim
+              kanagawa-nvim
+              lze
               mini-ai
               mini-comment
+              mini-statusline
               mini-surround
               none-ls-nvim
-              indent-blankline-nvim
-              nvim-treesitter.withAllGrammars
+              nvim-autopairs
+              nvim-lspconfig
               nvim-treesitter-context
               nvim-treesitter-textobjects
-              alpha-nvim
+              nvim-treesitter.withAllGrammars
+              smart-splits-nvim
               tiny-inline-diagnostic-nvim
-              nvim-lspconfig
-              vim-matchup
               todo-comments-nvim
+              vim-matchup
+              vim-sleuth
             ];
             neoTree = with pkgs.vimPlugins; [
               neo-tree-nvim
