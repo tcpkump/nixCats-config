@@ -104,6 +104,10 @@ local servers = {
             fileMatch = { "composer.json" },
             url = "https://json.schemastore.org/composer.json",
           },
+          {
+            fileMatch = { "renovate.json" },
+            url = "https://docs.renovatebot.com/renovate-schema.json",
+          },
         },
         validate = { enable = true },
       },
