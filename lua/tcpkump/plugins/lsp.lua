@@ -125,7 +125,16 @@ local servers = {
     settings = {
       ["helm-ls"] = {
         yamlls = {
-          config = yamlls_config,
+          config = {
+            completion = true,
+            keyOrdering = false,
+            validate = false, -- Disable validation for helm templates
+            schemaStore = {
+              enable = false,
+              url = "",
+            },
+            schemas = yamlls_config.schemas, -- Keep the schemas for other features
+          },
         },
       },
     },
