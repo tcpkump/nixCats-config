@@ -36,7 +36,6 @@
               ripgrep
 
               # LSPs
-              ansible-language-server
               basedpyright
               bash-language-server
               clang-tools
