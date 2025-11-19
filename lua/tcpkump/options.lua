@@ -3,6 +3,21 @@ vim.g.maplocalleader = ","
 
 vim.cmd("colorscheme kanagawa")
 
+-- Make background transparent for tmux dimming
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+  end,
+})
+
+-- Apply immediately
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+
 -- General
 vim.opt.updatetime = 100 -- Faster update time for plugins like git-signs
 vim.opt.spell = false -- Disable spellcheck
