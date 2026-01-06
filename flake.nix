@@ -86,7 +86,6 @@
               nvim-autopairs
               nvim-lspconfig
               nvim-treesitter-context
-              nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
               smart-splits-nvim
               tiny-inline-diagnostic-nvim

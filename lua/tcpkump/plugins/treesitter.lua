@@ -1,18 +1,16 @@
-require("nvim-treesitter.configs").setup({
-  highlight = { enable = true },
-  indent = { enable = false },
-  matchup = { enable = true },
-  textobjects = {
-    swap = {
-      enable = true,
-      swap_next = {
-        ["<leader>sa"] = "@parameter.inner",
-      },
-      swap_previous = {
-        ["<leader>sA"] = "@parameter.inner",
-      },
-    },
-  },
+-- nvim-treesitter setup (new API - no longer uses configs module)
+require("nvim-treesitter").setup({
+  install_dir = vim.fn.stdpath("data") .. "/site",
+})
+
+-- Enable treesitter highlighting for filetypes with parsers
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function(args)
+    local buf = args.buf
+    -- Try to start treesitter, silently ignore if no parser exists
+    pcall(vim.treesitter.start, buf)
+  end,
 })
 
 require("treesitter-context").setup({
