@@ -12,13 +12,24 @@ lint.linters_by_ft = {
 }
 
 -- Auto-lint on these events
-vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+-- Note: puppet-lint requires files to be on disk (stdin = false)
+-- BufWritePost ensures file is saved before linting
+-- BufEnter lints when opening existing files
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   group = vim.api.nvim_create_augroup("NvimLint", { clear = true }),
   callback = function()
-    -- Only lint if a linter is configured for this filetype
-    local linters = lint.linters_by_ft[vim.bo.filetype]
-    if linters then
+    lint.try_lint()
+  end,
+})
+
+-- Lint when entering a buffer (for existing files)
+-- Use defer to ensure buffer is fully loaded
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  group = "NvimLint",
+  callback = function()
+    -- Small delay to ensure buffer is fully loaded
+    vim.defer_fn(function()
       lint.try_lint()
-    end
+    end, 100)
   end,
 })
