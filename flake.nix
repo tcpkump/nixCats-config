@@ -84,6 +84,7 @@
               mini-surround
               none-ls-nvim
               nvim-autopairs
+              nvim-lint
               nvim-lspconfig
               nvim-treesitter-context
               nvim-treesitter.withAllGrammars
