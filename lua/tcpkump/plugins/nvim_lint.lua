@@ -7,8 +7,9 @@ local lint = require("lint")
 -- nvim-lint has built-in support for puppet-lint that avoids stderr issues
 lint.linters_by_ft = {
   puppet = { "puppet-lint" },
-  -- Add other linters as needed
-  -- terraform = { "tflint" },
+  ansible = { "ansible_lint" },
+  ["yaml.ansible"] = { "ansible_lint" },
+  terraform = { "tflint" },
 }
 
 -- Auto-lint on these events

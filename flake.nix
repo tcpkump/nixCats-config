@@ -56,7 +56,7 @@
               prettierd # generic
               puppet-lint
               stylua
-              trivy # terraform
+              tflint
               # yamllint # disabled due to it triggering in helm templates
             ];
             yaml = with pkgs; [
@@ -82,7 +82,6 @@
               mini-comment
               mini-statusline
               mini-surround
-              none-ls-nvim
               nvim-autopairs
               nvim-lint
               nvim-lspconfig
