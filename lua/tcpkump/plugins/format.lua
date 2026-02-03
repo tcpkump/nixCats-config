@@ -1,8 +1,12 @@
 local conform = require("conform")
 conform.setup({
-  format_on_save = {
-    timeout_ms = 2000,
-  },
+  format_on_save = function(bufnr)
+    local bufname = vim.api.nvim_buf_get_name(bufnr)
+    if bufname:match("renovate%.json") then
+      return
+    end
+    return { timeout_ms = 2000 }
+  end,
   formatters_by_ft = {
     -- NOTE: download formatters in lspsAndRuntimeDeps
     -- and configure them here
