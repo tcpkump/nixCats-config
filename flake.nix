@@ -52,7 +52,7 @@
               gotools
               hclfmt # hcl/packer/terraform
               isort # python
-              nixfmt-rfc-style
+              nixfmt
               prettierd # generic
               puppet-lint
               stylua
@@ -170,7 +170,7 @@
             name = defaultPackageName;
             packages = [ defaultPackage ];
             inputsFrom = [ ];
-            shellHook = '''';
+            shellHook = "";
           };
         };
 
