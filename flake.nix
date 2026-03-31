@@ -43,7 +43,7 @@
               gopls
               lua-language-server
               nixd
-              nodePackages.vscode-json-languageserver
+              vscode-json-languageserver
               terraform-ls
 
               # Diagnostics/Formatters
