@@ -2,7 +2,7 @@
 -- Run: nvim --headless -S test_files/test_nvim_lint.lua test_files/puppet/test.pp
 
 -- Open the puppet file
-local file = vim.fn.argv()[0]
+local file = vim.fn.argv()[1]
 if not file or file == "" then
   print("ERROR: No file specified")
   vim.cmd('quitall!')
