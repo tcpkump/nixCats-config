@@ -23,6 +23,10 @@ Enter development shell:
 nix develop
 ```
 
+## Keymaps
+
+See [KEYMAPS.md](KEYMAPS.md) for a full cheat sheet of custom and plugin keybindings.
+
 ## Structure
 
 - `flake.nix` - Main configuration defining plugins, LSPs, and build targets
