@@ -116,6 +116,7 @@
             ];
             general = with pkgs.vimPlugins; [
               grug-far-nvim
+              markview-nvim
               switch-vim
             ];
           };
