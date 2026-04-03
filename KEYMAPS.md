@@ -16,6 +16,21 @@
 | `<leader>:` | Command history |
 | `<leader>km` | Search keymaps |
 
+### Picker Query Syntax
+
+| Pattern | Behavior |
+|---------|----------|
+| `foo bar` | Fuzzy match both terms (AND) |
+| `'foo` | Exact match |
+| `^foo` | Match start of string |
+| `foo$` | Match end of string |
+| `!foo` | Exclude matches containing "foo" |
+| `query #lua` | Filter results to `.lua` files |
+| `query #src/` | Filter results to paths under `src/` |
+| `query #.go` | Filter results to `.go` extension |
+
+The `#` suffix is matched against the file path and works in any file picker.
+
 ---
 
 ## Git
