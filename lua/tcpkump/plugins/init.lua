@@ -17,6 +17,7 @@ require("tcpkump.plugins.welcome")
 require("lze").load({
   { import = "tcpkump.plugins.git_lazy" },
   { import = "tcpkump.plugins.markview" },
+  { import = "tcpkump.plugins.obsidian" },
   { import = "tcpkump.plugins.search" },
   { import = "tcpkump.plugins.switch" },
 })

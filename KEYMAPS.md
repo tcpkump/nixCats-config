@@ -128,6 +128,19 @@ The `#` suffix is matched against the file path and works in any file picker.
 
 ---
 
+## Obsidian
+
+Vault path: `~/obsidian`
+
+| Key | Action |
+|-----|--------|
+| `<leader>od` | Open today's daily note |
+| `<leader>on` | New note |
+| `<leader>oq` | Quick switch note |
+| `<leader>os` | Search vault |
+
+---
+
 ## Todo Comments
 
 Keywords: `TODO:` `FIX:` / `FIXME:` `HACK:` `WARN:` `NOTE:` `PERF:` `TEST:`

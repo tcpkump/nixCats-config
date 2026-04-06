@@ -119,6 +119,9 @@
               markview-nvim
               switch-vim
             ];
+            obsidian = with pkgs.vimPlugins; [
+              obsidian-nvim
+            ];
           };
 
           # Shared libraries added to LD_LIBRARY_PATH
@@ -143,6 +146,7 @@
               snacks = true;
               neoTree = true;
               yaml = true;
+              obsidian = true;
             };
           };
       };
