@@ -2,12 +2,11 @@ return {
   {
     "obsidian.nvim",
     ft = { "markdown" },
-    cmd = {
-      "ObsidianNew",
-      "ObsidianToday",
-      "ObsidianYesterday",
-      "ObsidianQuickSwitch",
-      "ObsidianSearch",
+    keys = {
+      { "<leader>od", "<cmd>Obsidian today<CR>", desc = "Daily note (today)" },
+      { "<leader>on", "<cmd>Obsidian new<CR>", desc = "New note" },
+      { "<leader>oq", "<cmd>Obsidian quick_switch<CR>", desc = "Quick switch note" },
+      { "<leader>os", "<cmd>Obsidian search<CR>", desc = "Search vault" },
     },
     after = function()
       require("obsidian").setup({
@@ -21,6 +20,7 @@ return {
           folder = "daily",
           date_format = "%Y-%m-%d",
         },
+        legacy_commands = false,
         completion = {
           nvim_cmp = false,
           min_chars = 2,
@@ -32,12 +32,6 @@ return {
           enable = false, -- markview handles rendering
         },
       })
-
-      local map = vim.keymap.set
-      map("n", "<leader>od", "<cmd>ObsidianToday<CR>", { desc = "Daily note (today)" })
-      map("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "New note" })
-      map("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", { desc = "Quick switch note" })
-      map("n", "<leader>os", "<cmd>ObsidianSearch<CR>", { desc = "Search vault" })
     end,
   },
 }

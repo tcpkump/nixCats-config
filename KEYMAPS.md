@@ -130,7 +130,7 @@ The `#` suffix is matched against the file path and works in any file picker.
 
 ## Obsidian
 
-Vault path: `~/obsidian`
+Vault path: `~/obsidian`. Commands use the form `:Obsidian <subcommand>` (e.g. `:Obsidian today`).
 
 | Key | Action |
 |-----|--------|
