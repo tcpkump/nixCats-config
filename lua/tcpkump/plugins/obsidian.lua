@@ -12,12 +12,16 @@ return {
       require("obsidian").setup({
         workspaces = {
           {
-            name = "personal",
-            path = "~/obsidian",
+            name = "Personal",
+            path = function()
+              local path = vim.fn.expand("~/Documents/Personal")
+              vim.fn.mkdir(path, "p")
+              return path
+            end,
           },
         },
         daily_notes = {
-          folder = "daily",
+          folder = "Daily",
           date_format = "%Y-%m-%d",
         },
         legacy_commands = false,
