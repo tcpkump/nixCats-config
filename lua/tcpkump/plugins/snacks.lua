@@ -1,6 +1,26 @@
 require("snacks").setup({
-  picker = { enabled = true },
+  picker = {
+    enabled = true,
+    win = {
+      list = {
+        keys = {
+          ["<c-j>"] = false,
+          ["<c-h>"] = false,
+        },
+      },
+      input = {
+        keys = {
+          ["<c-j>"] = false,
+        },
+      },
+    },
+  },
   lazygit = { enabled = true },
+  explorer = {
+    enabled = true,
+    git_status = true,
+    diagnostics = true,
+  },
 })
 
 -- A helper function to get the root directory of the LSP for the current buffer.
@@ -19,6 +39,39 @@ local function find_lsp_root()
   -- Fallback to the current working directory
   return vim.fn.getcwd()
 end
+
+vim.keymap.set("n", "<leader>e", function()
+  require("snacks").explorer()
+end, { desc = "Explorer toggle" })
+
+-- Quit Neovim if the explorer is the last thing open
+vim.api.nvim_create_autocmd("WinClosed", {
+  callback = function(ev)
+    local closing_win = tonumber(ev.match)
+    local remaining = vim.tbl_filter(function(w)
+      if w == closing_win then return false end
+      -- ignore floating windows
+      return vim.api.nvim_win_get_config(w).relative == ""
+    end, vim.api.nvim_list_wins())
+
+    if #remaining == 0 then return end
+
+    local all_snacks = true
+    for _, w in ipairs(remaining) do
+      local ft = vim.bo[vim.api.nvim_win_get_buf(w)].filetype
+      if not vim.startswith(ft, "snacks_") then
+        all_snacks = false
+        break
+      end
+    end
+
+    if all_snacks then
+      vim.schedule(function()
+        vim.cmd("qall")
+      end)
+    end
+  end,
+})
 
 vim.keymap.set("n", "<leader>gg", function()
   require("snacks").lazygit()

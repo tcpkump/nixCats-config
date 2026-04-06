@@ -83,11 +83,11 @@ The `#` suffix is matched against the file path and works in any file picker.
 
 ---
 
-## File Tree (Neo-tree)
+## File Tree (Snacks Explorer)
 
 | Key | Action |
 |-----|--------|
-| `<leader>e` | Toggle Neo-tree |
+| `<leader>e` | Toggle Explorer |
 
 ---
 

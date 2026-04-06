@@ -69,6 +69,7 @@
           startupPlugins = {
             gitPlugins = with pkgs.vimPlugins; [
               gitsigns-nvim
+              plenary-nvim
             ];
             general = with pkgs.vimPlugins; [
               alpha-nvim
@@ -92,13 +93,6 @@
               todo-comments-nvim
               vim-matchup
               vim-sleuth
-            ];
-            neoTree = with pkgs.vimPlugins; [
-              neo-tree-nvim
-              nui-nvim
-              nvim-web-devicons
-              nvim-window-picker
-              plenary-nvim
             ];
             snacks = with pkgs.vimPlugins; [
               snacks-nvim
@@ -144,7 +138,6 @@
               gitPlugins = true;
               customPlugins = true;
               snacks = true;
-              neoTree = true;
               yaml = true;
               obsidian = true;
             };
