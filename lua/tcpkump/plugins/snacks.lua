@@ -1,13 +1,35 @@
--- Set up lazygit config path from the repo root
-local config_path = vim.fn.fnamemodify(debug.getinfo(1).source:sub(2), ":h:h:h:h") .. "/lazygit.yml"
+-- Write lazygit user config to cache dir so snacks can append its theme file after it
+local lazygit_config = [[
+gui:
+  timeFormat: "02 Jan 06 15:04"
 
--- Add our custom config to the environment so lazygit picks it up
--- Snacks.lazygit will append its own theme/integration files to this
-if vim.env.LG_CONFIG_FILE then
-  vim.env.LG_CONFIG_FILE = config_path .. "," .. vim.env.LG_CONFIG_FILE
-else
-  vim.env.LG_CONFIG_FILE = config_path
-end
+git:
+  pagers:
+    - colorArg: always
+      pager: "delta --paging never --line-numbers"
+
+  commitPrefix:
+    - pattern: '(\w+)[-_](\d+).*'
+      replace: '[$1-$2] '
+
+  overrideGpg: true
+
+customCommands:
+  - key: 'D'
+    command: "sh -c 'git diff {{.SelectedLocalBranch.Name}}...HEAD | delta --paging never --color always'"
+    context: 'localBranches'
+    description: 'PR Diff (against selected branch)'
+    output: terminal
+  - key: 'O'
+    command: "gh pr view --web"
+    context: 'global'
+    description: 'Open current PR on GitHub'
+    output: log
+]]
+
+local user_config_path = vim.fn.stdpath("cache") .. "/lazygit-user.yml"
+vim.fn.writefile(vim.split(lazygit_config, "\n"), user_config_path)
+vim.env.LG_CONFIG_FILE = user_config_path
 
 require("snacks").setup({
   picker = {

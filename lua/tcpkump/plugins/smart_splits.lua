@@ -22,12 +22,6 @@ vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
 vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
 vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
 
--- Terminal mode (e.g. for lazygit)
-vim.keymap.set("t", "<C-h>", require("smart-splits").move_cursor_left)
-vim.keymap.set("t", "<C-j>", require("smart-splits").move_cursor_down)
-vim.keymap.set("t", "<C-k>", require("smart-splits").move_cursor_up)
-vim.keymap.set("t", "<C-l>", require("smart-splits").move_cursor_right)
-vim.keymap.set("t", "<C-\\>", require("smart-splits").move_cursor_previous)
 -- swapping buffers between windows
 vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
 vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
