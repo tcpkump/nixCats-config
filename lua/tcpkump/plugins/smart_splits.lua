@@ -1,9 +1,10 @@
 require("smart-splits").setup({
-  at_edge = "stop", -- Stop at the edge of the Neovim windows
-  -- If you want it to move to tmux panes, change this to 'wrap' or 'move'
-  -- and ensure your .tmux.conf is configured with the 'is_vim' check.
-  multiplexer_integration = "tmux", -- Explicitly set to tmux for reliability
-  disable_multiplexer_nav_when_zoomed = true, -- Stop navigation when pane is zoomed
+  at_edge = "move", -- Move to tmux panes when at the edge
+  -- Ensure your .tmux.conf has a robust 'is_vim' check.
+  -- Recommended for Nix users (handles wrapped nvim):
+  -- is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?|nvim-wrapped)(diff)?$'"
+  multiplexer_integration = "tmux",
+  disable_multiplexer_nav_when_zoomed = true,
 })
 
 -- recommended mappings
@@ -12,12 +13,21 @@ vim.keymap.set("n", "<A-h>", require("smart-splits").resize_left)
 vim.keymap.set("n", "<A-j>", require("smart-splits").resize_down)
 vim.keymap.set("n", "<A-k>", require("smart-splits").resize_up)
 vim.keymap.set("n", "<A-l>", require("smart-splits").resize_right)
+
 -- moving between splits
+-- Normal mode
 vim.keymap.set("n", "<C-h>", require("smart-splits").move_cursor_left)
 vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
 vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
 vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
 vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
+
+-- Terminal mode (e.g. for lazygit)
+vim.keymap.set("t", "<C-h>", require("smart-splits").move_cursor_left)
+vim.keymap.set("t", "<C-j>", require("smart-splits").move_cursor_down)
+vim.keymap.set("t", "<C-k>", require("smart-splits").move_cursor_up)
+vim.keymap.set("t", "<C-l>", require("smart-splits").move_cursor_right)
+vim.keymap.set("t", "<C-\\>", require("smart-splits").move_cursor_previous)
 -- swapping buffers between windows
 vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
 vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)

@@ -33,6 +33,7 @@
           lspsAndRuntimeDeps = {
             general = with pkgs; [
               lazygit
+              delta
               ripgrep
 
               # LSPs
