@@ -4,13 +4,18 @@ require("snacks").setup({
     win = {
       list = {
         keys = {
-          ["<c-j>"] = false,
           ["<c-h>"] = false,
+          ["<c-j>"] = false,
+          ["<c-k>"] = false,
+          ["<c-l>"] = false,
         },
       },
       input = {
         keys = {
+          ["<c-h>"] = false,
           ["<c-j>"] = false,
+          ["<c-k>"] = false,
+          ["<c-l>"] = false,
         },
       },
     },

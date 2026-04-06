@@ -1,5 +1,9 @@
 require("smart-splits").setup({
-  at_edge = "stop",
+  at_edge = "stop", -- Stop at the edge of the Neovim windows
+  -- If you want it to move to tmux panes, change this to 'wrap' or 'move'
+  -- and ensure your .tmux.conf is configured with the 'is_vim' check.
+  multiplexer_integration = "tmux", -- Explicitly set to tmux for reliability
+  disable_multiplexer_nav_when_zoomed = true, -- Stop navigation when pane is zoomed
 })
 
 -- recommended mappings
