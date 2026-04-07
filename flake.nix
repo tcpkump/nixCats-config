@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    difft-nvim = {
+      url = "github:ahkohd/difft.nvim";
+      flake = false;
+    };
   };
 
   outputs =
@@ -21,6 +25,15 @@
       };
       dependencyOverlays = [
         (utils.standardPluginOverlay inputs)
+        (final: prev: {
+          neovimPlugins = (prev.neovimPlugins or { }) // {
+            difft-nvim = prev.vimUtils.buildVimPlugin {
+              pname = "difft-nvim";
+              version = "master";
+              src = inputs.difft-nvim;
+            };
+          };
+        })
       ];
 
       categoryDefinitions =
@@ -34,6 +47,7 @@
             general = with pkgs; [
               lazygit
               delta
+              difftastic
               ripgrep
 
               # LSPs
@@ -108,7 +122,7 @@
           optionalPlugins = {
             gitPlugins = with pkgs.vimPlugins; [
               gitlinker-nvim
-            ];
+            ] ++ [ pkgs.neovimPlugins.difft-nvim ];
             general = with pkgs.vimPlugins; [
               grug-far-nvim
               markview-nvim

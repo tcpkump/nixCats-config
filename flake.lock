@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "difft-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762119470,
+        "narHash": "sha256-sKjjQySs+gvrRJJN/y35d8JYwIkXO853OsNNDEAKj0k=",
+        "owner": "ahkohd",
+        "repo": "difft.nvim",
+        "rev": "cabc1d56e8ce9647973039c65c71608583f700a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ahkohd",
+        "repo": "difft.nvim",
+        "type": "github"
+      }
+    },
     "nixCats": {
       "locked": {
         "lastModified": 1774835836,
@@ -33,6 +49,7 @@
     },
     "root": {
       "inputs": {
+        "difft-nvim": "difft-nvim",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs"
       }

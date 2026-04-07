@@ -37,6 +37,9 @@ The `#` suffix is matched against the file path and works in any file picker.
 
 | Key | Action |
 |-----|--------|
+| `<leader>gd` | Difftastic: all uncommitted changes vs HEAD (float) |
+| `<leader>gD` | Difftastic: staged changes only (float) |
+| `<leader>gb` | Difftastic: current branch vs main (float) |
 | `<leader>gg` | Open Lazygit |
 | `<leader>gm` | Modified files (git status picker) |
 | `<leader>gcb` | Buffer commit log |
