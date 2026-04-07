@@ -46,7 +46,7 @@ The `#` suffix is matched against the file path and works in any file picker.
 | `<leader>gm` | Modified files (git status picker) |
 | `<leader>gcb` | Buffer commit log |
 | `<leader>gcc` | All commits log |
-| `<leader>gy` | Copy git permalink to clipboard (gitlinker) |
+| `<leader>gy` | Copy git permalink to clipboard (gitlinker); also copies GitHub commit URL inside git log pickers |
 | `<leader>gY` | Open git permalink in browser (gitlinker) |
 
 ---

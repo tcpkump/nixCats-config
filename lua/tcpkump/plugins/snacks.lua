@@ -47,6 +47,35 @@ require("snacks").setup({
         },
       },
     },
+    actions = {
+      git_yank_commit_url = function(picker, item)
+        if not item then
+          return
+        end
+        Snacks.gitbrowse({
+          what = "commit",
+          commit = item.commit,
+          open = function(url)
+            vim.fn.setreg("+", url)
+            vim.notify("Copied: " .. url)
+          end,
+        })
+      end,
+    },
+    sources = {
+      git_log = {
+        win = {
+          input = { keys = { ["<leader>gy"] = { "git_yank_commit_url", mode = { "n", "i" } } } },
+          list = { keys = { ["<leader>gy"] = { "git_yank_commit_url", mode = { "n" } } } },
+        },
+      },
+      git_log_file = {
+        win = {
+          input = { keys = { ["<leader>gy"] = { "git_yank_commit_url", mode = { "n", "i" } } } },
+          list = { keys = { ["<leader>gy"] = { "git_yank_commit_url", mode = { "n" } } } },
+        },
+      },
+    },
   },
   lazygit = {
     enabled = true,
