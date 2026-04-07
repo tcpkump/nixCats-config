@@ -124,15 +124,6 @@ The `#` suffix is matched against the file path and works in any file picker.
 
 ---
 
-## Terraform
-
-| Key | Action |
-|-----|--------|
-| `<leader>tfi` | `terraform init -upgrade` in buffer directory |
-| `<leader>tfp` | `terraform plan` in buffer directory |
-
----
-
 ## Obsidian
 
 Vault path: `~/obsidian`. Commands use the form `:Obsidian <subcommand>` (e.g. `:Obsidian today`).

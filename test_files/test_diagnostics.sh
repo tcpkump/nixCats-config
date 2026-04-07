@@ -18,15 +18,12 @@ case $FILETYPE in
   python)
     FILE="$TEST_DIR/python/test.py"
     ;;
-  terraform)
-    FILE="$TEST_DIR/terraform/test.tf"
-    ;;
   lua)
     FILE="$TEST_DIR/lua/test.lua"
     ;;
   *)
     echo "Unknown filetype: $FILETYPE"
-    echo "Usage: $0 <puppet|yaml|python|terraform|lua>"
+    echo "Usage: $0 <puppet|yaml|python|lua>"
     exit 1
     ;;
 esac

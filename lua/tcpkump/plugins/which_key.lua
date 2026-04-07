@@ -16,7 +16,6 @@ wk.add({
   { "<leader>o", group = "Obsidian", icon = { icon = "󱓞", color = "green" } },
   { "<leader>r", group = "Rename", icon = { icon = "󰑕", color = "cyan" } },
   { "<leader>s", group = "Switch", icon = { icon = "󰁔", color = "azure" } },
-  { "<leader>tf", group = "Terraform", icon = { icon = "", color = "purple" } },
   { "<leader><leader>", group = "Swap Buffers", icon = { icon = "󰛢", color = "azure" } },
 
   -- Individual key icon hints

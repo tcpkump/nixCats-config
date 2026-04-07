@@ -17,7 +17,6 @@ Open files in Neovim and check for:
 - `puppet/` - Puppet manifests (.pp files) - Uses **nvim-lint** for puppet-lint diagnostics
 - `yaml/` - YAML files
 - `python/` - Python scripts
-- `terraform/` - Terraform configurations
 - `lua/` - Lua scripts
 
 ## Testing Puppet-Lint
