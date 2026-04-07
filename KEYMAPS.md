@@ -107,7 +107,7 @@ The `#` suffix is matched against the file path and works in any file picker.
 | `n` / `N` | Next / Prev search result (centered) |
 | `gcc` | Toggle line comment (mini.comment) |
 | `gc` (visual) | Toggle comment block |
-| `<leader>sx` | Switch word forward (true↔false, yes↔no, up↔down, on↔off, row↔column) |
+| `<leader>sx` | Switch word forward (true↔false, yes↔no, up↔down, on↔off, row↔column, `- [ ]`↔`- [x]`) |
 | `<leader>sX` | Switch word reverse |
 
 ---

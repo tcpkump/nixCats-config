@@ -24,6 +24,7 @@ return {
         { "row", "column" },
         { "yes", "no" },
         { "on", "off" },
+        { "- [ ]", "- [x]" },
       }
     end,
   },
