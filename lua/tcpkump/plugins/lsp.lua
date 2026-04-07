@@ -5,10 +5,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     local bufopts = { noremap = true, silent = true, buffer = ev.buf }
 
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", bufopts, { desc = "Go to definition" }))
+    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, vim.tbl_extend("force", bufopts, { desc = "Go to type definition" }))
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", bufopts, { desc = "Code Action" }))
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", bufopts, { desc = "Rename symbol" }))
 
     -- Stop yamlls when helm_ls attaches to helm files
     local client = vim.lsp.get_client_by_id(ev.data.client_id)

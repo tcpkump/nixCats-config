@@ -1,3 +1,4 @@
+require("tcpkump.plugins.which_key")
 require("tcpkump.plugins.completion")
 require("tcpkump.plugins.diagnostic")
 require("tcpkump.plugins.format")

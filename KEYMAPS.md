@@ -2,6 +2,8 @@
 
 **Leader = `<Space>`, Local leader = `,`**
 
+Press `<leader>` (or any prefix key) and wait to see a helix-style which-key popup with available bindings.
+
 ---
 
 ## Files & Search (Snacks Picker)

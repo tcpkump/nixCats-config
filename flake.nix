@@ -108,6 +108,7 @@
               todo-comments-nvim
               vim-matchup
               vim-sleuth
+              which-key-nvim
             ];
             snacks = with pkgs.vimPlugins; [
               snacks-nvim
