@@ -15,11 +15,6 @@ git:
   overrideGpg: true
 
 customCommands:
-  - key: 'D'
-    command: "sh -c 'git diff {{.SelectedLocalBranch.Name}}...HEAD | delta --paging never --color always'"
-    context: 'localBranches'
-    description: 'PR Diff (against selected branch)'
-    output: terminal
   - key: 'O'
     command: "gh pr view --web"
     context: 'global'
@@ -90,12 +85,16 @@ vim.api.nvim_create_autocmd("WinClosed", {
   callback = function(ev)
     local closing_win = tonumber(ev.match)
     local remaining = vim.tbl_filter(function(w)
-      if w == closing_win then return false end
+      if w == closing_win then
+        return false
+      end
       -- ignore floating windows
       return vim.api.nvim_win_get_config(w).relative == ""
     end, vim.api.nvim_list_wins())
 
-    if #remaining == 0 then return end
+    if #remaining == 0 then
+      return
+    end
 
     local all_snacks = true
     for _, w in ipairs(remaining) do
