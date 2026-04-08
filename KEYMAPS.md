@@ -102,6 +102,7 @@ The `#` suffix is matched against the file path and works in any file picker.
 |-----|--------|
 | `<C-s>` | Save file (normal / insert / visual) |
 | `<leader>y` | Yank to system clipboard |
+| `<leader>yf` | Yank relative file path to clipboard |
 | `<leader>d` | Delete without yanking |
 | `p` (visual) | Paste, preserve yank register |
 | `n` / `N` | Next / Prev search result (centered) |
