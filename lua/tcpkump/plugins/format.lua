@@ -12,7 +12,7 @@ conform.setup({
     -- and configure them here
     lua = { "stylua" },
     go = { "gofmt", "goimports" },
-    hcl = { "hcl", "packer_fmt" },
+    hcl = { "hcl" },
     nix = { "nixfmt" },
     puppet = { "puppet-lint" },
     terraform = { "terraform_fmt" },

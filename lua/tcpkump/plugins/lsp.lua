@@ -1,4 +1,4 @@
-vim.lsp.set_log_level("WARN")
+vim.lsp.log.set_level("WARN")
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
