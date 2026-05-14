@@ -1,0 +1,9 @@
+nixpkgs is pinned to 15c6719d8c604779cf59e03c245ea61d3d7ab69b (neovim 0.11.6).
+
+Neovim 0.12 triggers a terraform-ls bug where an overflowed uint32 deltaLine in semantic
+tokens causes nlua_str_utfindex to spin at 100% CPU, freezing neovim entirely.
+
+To unpin: delete this file, restore nixpkgs.url in flake.nix to track nixpkgs-unstable
+normally, and run `nix flake update nixpkgs`.
+
+Upstream fix: https://github.com/hashicorp/terraform-ls/pull/2122

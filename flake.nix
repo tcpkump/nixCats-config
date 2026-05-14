@@ -2,6 +2,9 @@
   description = "tcpkump neovim config";
 
   inputs = {
+    # nixpkgs pinned to neovim 0.11.6 — 0.12 triggers a terraform-ls semantic tokens overflow bug
+    # that freezes neovim. Re-enable auto-updates once this is merged:
+    # https://github.com/hashicorp/terraform-ls/pull/2122
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
     difft-nvim = {

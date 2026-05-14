@@ -23,7 +23,15 @@ jobs:
       - name: Update flake inputs
         id: update
         run: |
-          nix flake update 2>&1 | tee update-log.txt
+          # nixpkgs is pinned to neovim 0.11.6 to avoid a terraform-ls semantic tokens bug
+          # that freezes neovim 0.12. Check https://github.com/hashicorp/terraform-ls/pull/2122
+          # and remove the NIXPKGS_PINNED file once that PR is merged and nixpkgs picks it up.
+          if [ -f NIXPKGS_PINNED ]; then
+            echo "nixpkgs is pinned (see NIXPKGS_PINNED), updating other inputs only"
+            nix flake update nixCats difft-nvim 2>&1 | tee update-log.txt
+          else
+            nix flake update 2>&1 | tee update-log.txt
+          fi
           if git diff --quiet flake.lock; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
