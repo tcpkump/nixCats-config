@@ -27,11 +27,8 @@ Press `<leader>` (or any prefix key) and wait to see a helix-style which-key pop
 | `^foo` | Match start of string |
 | `foo$` | Match end of string |
 | `!foo` | Exclude matches containing "foo" |
-| `query #lua` | Filter results to `.lua` files |
-| `query #src/` | Filter results to paths under `src/` |
-| `query #.go` | Filter results to `.go` extension |
-
-The `#` suffix is matched against the file path and works in any file picker.
+| `<C-g> file:lua$ <C-g> query` | Filter results to `.lua` files |
+| `<C-g> file:src/ <C-g> query` | Filter results to paths under `src/` |
 
 ---
 
