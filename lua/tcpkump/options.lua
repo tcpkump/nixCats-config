@@ -24,7 +24,7 @@ vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 
 -- General
-vim.opt.updatetime = 100 -- Faster update time for plugins like git-signs
+vim.opt.updatetime = 300 -- CursorHold delay for gitsigns, LSP hover, diagnostics
 vim.opt.spell = false -- Disable spellcheck
 vim.opt.conceallevel = 0 -- See raw characters in files
 vim.opt.wrap = false -- Do not wrap lines
