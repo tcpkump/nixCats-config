@@ -15,6 +15,7 @@ require("tcpkump.plugins.treesitter")
 require("tcpkump.plugins.welcome")
 
 require("lze").load({
+  { import = "tcpkump.plugins.csv" },
   { import = "tcpkump.plugins.difft" },
   { import = "tcpkump.plugins.git_lazy" },
   { import = "tcpkump.plugins.markview" },

@@ -135,6 +135,17 @@ Vault path: `~/obsidian`. Commands use the form `:Obsidian <subcommand>` (e.g. `
 
 ---
 
+## CSV / TSV
+
+Per-column rainbow syntax highlighting (rainbow_csv) is always active. Aligned table view (csvview.nvim) auto-enables in normal/visual mode and suspends in insert mode so cursor position stays accurate.
+
+| Key / Command | Action |
+|---------------|--------|
+| `<leader>ct` | Toggle aligned table view (buffer-local) |
+| `:RainbowAlign` | Pad columns in-place (modifies buffer; undo with `:RainbowShrink`) |
+
+---
+
 ## Todo Comments
 
 Keywords: `TODO:` `FIX:` / `FIXME:` `HACK:` `WARN:` `NOTE:` `PERF:` `TEST:`

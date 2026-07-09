@@ -106,6 +106,7 @@
               nvim-lspconfig
               nvim-treesitter-context
               nvim-treesitter.withAllGrammars
+              rainbow_csv
               smart-splits-nvim
               tiny-inline-diagnostic-nvim
               todo-comments-nvim
@@ -128,6 +129,7 @@
               gitlinker-nvim
             ] ++ [ pkgs.neovimPlugins.difft-nvim ];
             general = with pkgs.vimPlugins; [
+              csvview-nvim
               grug-far-nvim
               markview-nvim
               switch-vim
