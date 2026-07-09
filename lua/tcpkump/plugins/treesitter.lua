@@ -3,13 +3,14 @@ require("nvim-treesitter").setup({
   install_dir = vim.fn.stdpath("data") .. "/site",
 })
 
--- Enable treesitter highlighting for filetypes with parsers
+-- Enable treesitter highlighting for filetypes with parsers.
+-- csv/tsv are excluded so rainbow_csv's syntax-based column colours work.
+local ts_exclude = { csv = true, tsv = true }
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function(args)
-    local buf = args.buf
-    -- Try to start treesitter, silently ignore if no parser exists
-    pcall(vim.treesitter.start, buf)
+    if ts_exclude[vim.bo[args.buf].filetype] then return end
+    pcall(vim.treesitter.start, args.buf)
   end,
 })
 
