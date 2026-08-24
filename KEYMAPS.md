@@ -43,7 +43,8 @@ Press `<leader>` (or any prefix key) and wait to see a helix-style which-key pop
 | `<leader>gm` | Modified files (git status picker) |
 | `<leader>gcb` | Buffer commit log |
 | `<leader>gcc` | All commits log |
-| `<leader>gy` | Copy git permalink to clipboard (gitlinker); also copies GitHub commit URL inside git log pickers |
+| `<leader>gy` | Copy git branch permalink to clipboard (gitlinker); also copies GitHub commit URL inside git log pickers |
+| `<leader>gcy` | Copy git commit permalink to clipboard (gitlinker) |
 | `<leader>gY` | Open git permalink in browser (gitlinker) |
 
 ---
